@@ -1,24 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
 
 function App() {
+    const [newItem, setNewItem] = useState("")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <>
+   <form className="new-item-form">
+     <div className={"from-row"}>
+       <label htmlFor={"item"}>New Item</label>
+         <input type="text" name="name" id={"item"} />
+     </div>
+     <button className={"btn"}>Add Item</button>
+   </form>
+   <h1 className={"header"}>Todo List</h1>
+   <ul className={"list"}>
+     <li>
+       <label>
+            <input type="checkbox" />
+           Item 1
+       </label>
+       <button className={"btn btn-danger"}>Delete</button>
+     </li>
+       <li>
+           <label>
+               <input type="checkbox" />
+               Item 2
+           </label>
+           <button className={"btn btn-danger"}>Delete</button>
+       </li>
+   </ul>
+    </>
   );
 }
 
